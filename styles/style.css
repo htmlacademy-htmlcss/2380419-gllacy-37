@@ -1,0 +1,9 @@
+html {
+    height: 100%;
+}
+
+body {
+    width: 1366px;
+    background-color: #FEAFC3;
+    display: flex;
+}
