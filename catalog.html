@@ -7,15 +7,14 @@
   </head>
   <body>
     <header class="page-header">
+      <h1 class="visually-hidden">Gllacy-shop</h1>
+      <a class="header-link" href="index.html">
+        <img class="navigation-logo" src="images/global/gllacy-shop.png" weight="137px" alt="Gllacy Shop">
+      </a>
       <nav class="navigation">
         <ul class="navigation-list">
           <li class="navigation-list-item">
             <a class="navigation-link" href="#">
-              <img src="images/global/gllacy-shop.png" weight="137px" alt="Gllacy Shop">
-            </a>
-          </li>
-          <li class="navigation-list-item">
-            <a class="navigation-link" href="index.html">
               Каталог
               <img src="images/global/arrow-down.svg" weight="16px" alt="Открыть каталог">
             </a>
@@ -35,18 +34,18 @@
           <li class="navigation-user-item-phone">
             <a class="navigation-user-link navigation-link-phone"  href="tel:+78005558628">+7 800 555-86-28</a>
           </li>
-          <li class="navigation-user-item">
+          <li class="navigation-user-item navigation-button  only-img">
             <a class="navigation-link navigation-link-search" href="catalog.html">
               <img class="img-search" src="images/global/search.svg" width="16px" alt="Поиск">
             </a>
           </li>
-          <li class="navigation-user-item">
+          <li class="navigation-user-item navigation-button">
               <a class="navigation-link navigation-link-login" href="#">
                 <img class="img-login" src="images/global/log-in.svg" width="16px" alt="Вход">
                 Вход
               </a>
           </li>
-          <li class="navigation-user-item">
+          <li class="navigation-user-item navigation-button">
               <a class="navigation-link navigation-link-cart" href="#">
                 <img class="img-cart" src="images/global/cart.svg" width="16px" alt="Корзина">
                 2 товара
@@ -56,8 +55,8 @@
       </nav>
     </header>
     <main class="catalog-main">
-        <section catalog-head>
-            <h1 catalog-header>Сливочное мороженое</h1>
+        <section class="catalog-head">
+            <h1 class="catalog-head-header">Сливочное мороженое</h1>
             <ol class="breadcrumbs">
                 <li class="breadcrumbs-item">
                     <a class="breadcrumbs-link" href="index.html">Главная</a>
@@ -71,187 +70,276 @@
             </ol>
         </section>
         <form class="catalog-filters" action="https://echo.htmlacademy.ru/" method="get">
-            <select class="filters-sort" name="filters-sort" id="filters-sort" aria-label="Сортировка:">
-                <option class="filters-sort-option" value="rating">По популярности</option>
+          <fieldset class="filters-sort fieldset">
+            <label class="filter-sort-label label" for="filter-sort-label">Сортировка:</label>
+            <select class="filter-sort-select select" name="filter-sort" id="filter-sort">
+                <option class="filters-sort-option" selected value="rating">По популярности</option>
                 <option class="filters-sort-option" value="favorites">По стоимости</option>
-                <option class="filters-sort-option" selected value="cheaper">По вкусу</option>
+                <option class="filters-sort-option" value="cheaper">По вкусу</option>
             </select>
-            <fieldset class="filter-price">
-                <h3 class="price-header">Цена: 100 ₽ – 500 ₽</h3>
-                <div class="price-slider">Здесь ползунок</div>
-            </fieldset>
-            <fieldset class="filter-fat">
-                <legend class="fat-legend">Жирность:</legend>
-                <label class="fat-label"><input type="radio" name="filter-fat" value="zero" id="zero">0%</label>
-                <label class="fat-label"><input type="radio" name="filter-fat" checked value="ten" id="ten">10%</label>
-                <label class="fat-label"><input type="radio" name="filter-fat" value="less-than-30" id="less-than-30">до 30%</label>
-                <label class="fat-label"><input type="radio" name="filter-fat" value="more-than-30" id="more-than-30">выше 30%</label>
-            </fieldset>
-            <fieldset class="filter-fillers">
-                <legend class="fillers-legend">Наполнители:</legend>
-                <label class="fillers-label"><input type="checkbox" name="filter-fillers" checked value="chocolate" id="chocolate">шоколадные</label>
-                <label class="fillers-label"><input type="checkbox" name="filter-fillers" checked value="shugar" id="shugar">сахарные посыпки</label>
-                <label class="fillers-label"><input type="checkbox" name="filter-fillers" value="fructs" id="fructs">фрукты</label>
-                <label class="fillers-label"><input type="checkbox" name="filter-fillers" value="syrup" id="syrup">сиропы</label>
-                <label class="fillers-label"><input type="checkbox" name="filter-fillers" value="jam" id="jam">джемы</label>                
-            </fieldset>
-            <input class="button button-apply" type="button" value="Применить">
+          </fieldset>
+          <fieldset class="filters-price fieldset">
+              <h3 class="price-header label">Цена: 100 ₽ – 500 ₽</h3>
+              <div class="price-slider select">Здесь ползунок</div>
+          </fieldset>
+          <fieldset class="filters-fat fieldset">
+            <legend class="fat-legend label">Жирность:</legend>
+            <ul class="fat-list select">
+              <li class="fat-item">
+                <input class="fat-input" type="radio" name="filter-fat" value="zero" id="zero">
+                <label for="zero" class="fat-label">0%</label>
+              </li>
+              <li class="fat-item">
+                <input class="fat-input" type="radio" name="filter-fat" checked value="ten" id="ten">
+                <label for="ten" class="fat-label">10%</label>
+              </li>
+              <li class="fat-item">
+                <input class="fat-input" type="radio" name="filter-fat" value="less-than-30" id="less-than-30">
+                <label for="less-than-30" class="fat-label">до 30%</label>
+              </li>
+              <li class="fat-item">
+                <input class="fat-input" type="radio" name="filter-fat" value="more-than-30" id="more-than-30">
+                <label class="fat-label">выше 30%</label>
+              </li>    
+            </ul>
+          </fieldset>
+          <fieldset class="filters-fillers fieldset">
+              <legend class="filler-legend label">Наполнители:</legend>
+            <ul class="fillers-list select">
+              <li class="filler-item">
+                <input class="filler-input" type="checkbox" name="filter-fillers" checked value="chocolate" id="chocolate">
+                <label class="filler-label">шоколадные</label>                
+              </li>
+              <li class="filler-item">
+                <input class="filler-input" type="checkbox" name="filter-fillers" checked value="shugar" id="shugar">
+                <label class="filler-label">сахарные посыпки</label>                
+              </li>
+              <li class="filler-item">
+                <input class="filler-input" type="checkbox" name="filter-fillers" value="fructs" id="fructs">
+                <label class="filler-label">фрукты</label>                
+              </li>
+              <li class="filler-item">
+                <input class="filler-input" type="checkbox" name="filter-fillers" value="syrup" id="syrup">
+                <label class="filler-label">сиропы</label>
+              </li>
+              <li class="filler-item">
+                <input class="filler-input" type="checkbox" name="filter-fillers" value="jam" id="jam">
+                <label class="filler-label">джемы</label>
+              </li>           
+            </ul>
+          </fieldset>
+          <input class="button button-apply" type="button" value="Применить">
         </form>
         <ol class="catalog-flavor">
             <li class="flavor-item">
-                <img class="flavor-item-img" src="images/flavor/raspberries.jpg" alt="Малиновый вкус.">
+              <div class="flavor-info">
                 <h3 class="flavor-item-header">Малинка</h3>
                 <p class="flavor-item-description">
                     Сливочное мороженое с малиновым джемом
                 </p>
                 <div class="flavor-item-buy">
                     <p class="flavor-item-buy-price"><span class="flavor-item-price-value">310</span><span>₽/кг</span></p>
-                    <a href="#" class="flavor-item-buy-button">
+                    <a href="#" class="button button-pink flavor-item-buy-button">
                         <img src="images/global/cart.svg" width="16px" height="16px" alt="В корзину.">
                     </a>
                 </div>
+              </div>
+              <figure class="flavor-img">
+                <img class="flavor-item-img" src="images/flavor/raspberries.jpg" alt="Малиновый вкус.">
+              </figure>  
             </li>
             <li class="flavor-item">
-                <img class="flavor-item-img" src="images/flavor/pistachio.jpg" alt="Фисташковый вкус.">
+              <div class="flavor-info">
                 <h3 class="flavor-item-header">Фисташка</h3>
                 <p class="flavor-item-description">
                     Фисташковый пломбир с кусочками шоколада
                 </p>
                 <div class="flavor-item-buy">
                     <p class="flavor-item-buy-price"><span class="flavor-item-price-value">340</span><span>₽/кг</span></p>
-                    <a href="#" class="flavor-item-buy-button">
+                    <a href="#" class="button button-pink flavor-item-buy-button">
                         <img src="images/global/cart.svg" width="16px" height="16px" alt="В корзину.">
                     </a>
                 </div>
+              </div>
+              <figure class="flavor-img">
+                <img class="flavor-item-img" src="images/flavor/pistachio.jpg" alt="Фисташковый вкус.">
+              </figure>  
             </li>
             <li class="flavor-item">
-                <img class="flavor-item-img" src="images/flavor/blueberry.jpg" alt="Черничный вкус.">
+              <div class="flavor-info">
                 <h3 class="flavor-item-header">Черника</h3>
                 <p class="flavor-item-description">
                     Крем-брюле с черничным джемом
                 </p>
                 <div class="flavor-item-buy">
                     <p class="flavor-item-buy-price"><span class="flavor-item-price-value">330</span><span>₽/кг</span></p>
-                    <a href="#" class="flavor-item-buy-button">
+                    <a href="#" class="button button-pink flavor-item-buy-button">
                         <img src="images/global/cart.svg" width="16px" height="16px" alt="В корзину.">
                     </a>
                 </div>
+              </div>
+              <figure class="flavor-img">
+                <img class="flavor-item-img" src="images/flavor/blueberry.jpg" alt="Черничный вкус.">
+              </figure>  
             </li>
             <li class="flavor-item">
-                <img class="flavor-item-img" src="images/flavor/bubblegum.jpg" alt="Вкус бабл-гам.">
+              <div class="flavor-info">
                 <h3 class="flavor-item-header"></h3>
                 <p class="flavor-item-description">
                     Ванильный пломбир со сладкой посыпкой
                 </p>
                 <div class="flavor-item-buy">
                     <p class="flavor-item-buy-price"><span class="flavor-item-price-value">320</span><span>₽/кг</span></p>
-                    <a href="#" class="flavor-item-buy-button">
+                    <a href="#" class="button button-pink flavor-item-buy-button">
                         <img src="images/global/cart.svg" width="16px" height="16px" alt="В корзину.">
                     </a>
                 </div>
+              </div>
+              <figure class="flavor-img">
+                <img class="flavor-item-img" src="images/flavor/bubblegum.jpg" alt="Вкус бабл-гам.">
+              </figure>  
             </li>
             <li class="flavor-item">
-                <img class="flavor-item-img" src="images/flavor/dewberry.jpg" alt="Ежевичный вкус.">
+              <div class="flavor-info">
                 <h3 class="flavor-item-header">Ежевика</h3>
                 <p class="flavor-item-description">
                     Сливочное мороженое с ежевичным джемом
                 </p>
                 <div class="flavor-item-buy">
                     <p class="flavor-item-buy-price"><span class="flavor-item-price-value">330</span><span>₽/кг</span></p>
-                    <a href="#" class="flavor-item-buy-button">
+                    <a href="#" class="button button-pink flavor-item-buy-button">
                         <img src="images/global/cart.svg" width="16px" height="16px" alt="В корзину.">
                     </a>
                 </div>
+              </div>
+              <figure class="flavor-img">
+                <img class="flavor-item-img" src="images/flavor/dewberry.jpg" alt="Ежевичный вкус.">
+              </figure>  
             </li>
             <li class="flavor-item">
-                <img class="flavor-item-img" src="images/flavor/banana.jpg" alt="Банановый вкус.">
+              <div class="flavor-info">
                 <h3 class="flavor-item-header">Банан</h3>
                 <p class="flavor-item-description">Сливочный пломбир с банановым вкусом</p>
                 <div class="flavor-item-buy">
                     <p class="flavor-item-buy-price"><span class="flavor-item-price-value">340</span><span>₽/кг</span></p>
-                    <a href="#" class="flavor-item-buy-button">
+                    <a href="#" class="button button-pink flavor-item-buy-button">
                         <img src="images/global/cart.svg" width="16px" height="16px" alt="В корзину.">
                     </a>
                 </div>
+              </div>
+              <figure class="flavor-img">
+                <img class="flavor-item-img" src="images/flavor/banana.jpg" alt="Банановый вкус.">
+              </figure>  
             </li>
             <li class="flavor-item">
-                <img class="flavor-item-img" src="images/flavor/chocolate.jpg" alt="Шоколадный вкус">
+              <div class="flavor-info">
                 <h3 class="flavor-item-header">Шоколадка</h3>
                 <p class="flavor-item-description">
                     Классический шоколадный пломбир
                 </p>
                 <div class="flavor-item-buy">
                     <p class="flavor-item-buy-price"><span class="flavor-item-price-value">270</span><span>₽/кг</span></p>
-                    <a href="#" class="flavor-item-buy-button">
+                    <a href="#" class="button button-pink flavor-item-buy-button">
                         <img src="images/global/cart.svg" width="16px" height="16px" alt="В корзину.">
                     </a>
                 </div>
+              </div>
+              <figure class="flavor-img">
+                <img class="flavor-item-img" src="images/flavor/chocolate.jpg" alt="Шоколадный вкус">
+              </figure>  
             </li>
             <li class="flavor-item">
-                <img class="flavor-item-img" src="images/flavor/strawberry.png" alt="Клубничный вкус">
+              <div class="flavor-info">
                 <h3 class="flavor-item-header">Клубничка</h3>
                 <p class="flavor-item-description">
                     Сливочный пломбир с клубничным вкусом
                 </p>
                 <div class="flavor-item-buy">
                     <p class="flavor-item-buy-price"><span class="flavor-item-price-value">300</span><span>₽/кг</span></p>
-                    <a href="#" class="flavor-item-buy-button">
+                    <a href="#" class="button button-pink flavor-item-buy-button">
                         <img src="images/global/cart.svg" width="16px" height="16px" alt="В корзину.">
                     </a>
                 </div>
+              </div>
+              <figure class="flavor-img">
+                <img class="flavor-item-img" src="images/flavor/strawberry.png" alt="Клубничный вкус">
+              </figure>  
             </li>
             <li class="flavor-item">
-                <img class="flavor-item-img" src="images/flavor/lemon.jpg" alt="Лимонный вкус">
+              <div class="flavor-info">
                 <h3 class="flavor-item-header">Лимон</h3>
                 <p class="flavor-item-description">Освежающий лимонный сорбет</p>
                 <div class="flavor-item-buy">
                     <p class="flavor-item-buy-price"><span class="flavor-item-price-value">310</span><span>₽/кг</span></p>
-                    <a href="#" class="flavor-item-buy-button">
+                    <a href="#" class="button button-pink flavor-item-buy-button">
                         <img src="images/global/cart.svg" width="16px" height="16px" alt="В корзину.">
                     </a>
                 </div>
+              </div>
+              <figure class="flavor-img">
+                <img class="flavor-item-img" src="images/flavor/lemon.jpg" alt="Лимонный вкус">
+              </figure>  
             </li>
             <li class="flavor-item">
-                <img class="flavor-item-img" src="images/flavor/mentol.jpg" alt="Ментоловый вкус">
+              <div class="flavor-info">
                 <h3 class="flavor-item-header">Ментол</h3>
                 <p class="flavor-item-description">Сливочный пломбир с ментоловым сиропом</p>
                 <div class="flavor-item-buy">
                     <p class="flavor-item-buy-price"><span class="flavor-item-price-value">320</span><span>₽/кг</span></p>
-                    <a href="#" class="flavor-item-buy-button">
+                    <a href="#" class="button button-pink flavor-item-buy-button">
                         <img src="images/global/cart.svg" width="16px" height="16px" alt="В корзину.">
                     </a>
                 </div>
+              </div>
+              <figure class="flavor-img">
+                <img class="flavor-item-img" src="images/flavor/mentol.jpg" alt="Ментоловый вкус">
+              </figure>  
             </li>
             <li class="flavor-item">
-                <img class="flavor-item-img" src="images/flavor/nut.jpg" alt="Ореховый вкус">
+              <div class="flavor-info">
                 <h3 class="flavor-item-header">Орешек</h3>
                 <p class="flavor-item-description">
                     Фисташковый пломбир с шоколадным сиропом
                 </p>
                 <div class="flavor-item-buy">
                     <p class="flavor-item-buy-price"><span class="flavor-item-price-value">360</span><span>₽/кг</span></p>
-                    <a href="#" class="flavor-item-buy-button">
+                    <a href="#" class="button button-pink flavor-item-buy-button">
                         <img src="images/global/cart.svg" width="16px" height="16px" alt="В корзину.">
                     </a>
                 </div>
+              </div>
+              <figure class="flavor-img">
+                <img class="flavor-item-img" src="images/flavor/nut.jpg" alt="Ореховый вкус">
+              </figure>  
             </li>
             <li class="flavor-item">
-                <img class="flavor-item-img" src="images/flavor/creme-brulee.jpg" alt="Вкус крем-брюле">
+              <div class="flavor-info">
                 <h3 class="flavor-item-header">Крем-брюле</h3>
-                <p class="flavor-item-description"></p>
+                <p class="flavor-item-description">
+                  Классическое<br>крем-брюле
+                </p>
                 <div class="flavor-item-buy">
                     <p class="flavor-item-buy-price"><span class="flavor-item-price-value">280</span><span>₽/кг</span></p>
-                    <a href="#" class="flavor-item-buy-button">
+                    <a href="#" class="button button-pink flavor-item-buy-button">
                         <img src="images/global/cart.svg" width="16px" height="16px" alt="В корзину.">
                     </a>
                 </div>
+              </div>
+              <figure class="flavor-img">
+                <img class="flavor-item-img" src="images/flavor/creme-brulee.jpg" alt="Вкус крем-брюле">
+              </figure>  
             </li>
         </ol>
         <nav class="catalog-pagination">
-            <input class="button pagination-button-more" type="button" value="Показать еще">
-            <ol class="pagination-list">
+          <ol class="empty"></ol>  
+          <input class="button pagination-button-more" type="button" value="Показать еще">
+            <div class="pagination-pages">
+              <a class="pagination-arrow arrow-left" type="button">
+                <img class="img-arrow img-arrow-left" src="images/global/arrow-down.svg" width="16px" height="16px" alt="Влево.">
+              </a>
+              <ol class="pagination-list">
                 <li class="pagination-item pagination-current-item">
-                    <a class="pagination-link" href="#">1</a>
+                    <a class="pagination-link current" href="#">1</a>
                 </li>
                 <li class="pagination-item">
                     <a class="pagination-link" href="#">2</a>
@@ -265,7 +353,11 @@
                 <li class="pagination-item">
                     <a class="pagination-link" href="#">5</a>
                 </li>
-            </ol>
+              </ol>
+              <a class="pagination-arrow arrow-left" type="button">
+                <img class="img-arrow img-arrow-right" src="images/global/arrow-down.svg" width="16px" height="16px" alt="Вправо.">
+              </a>
+            </div>    
         </nav>
     </main>
     <footer class="footer">
@@ -307,8 +399,8 @@
       <a class="maker-link" href="https://htmlacademy.ru/">
         <img class="maker-img" src="images/global/logo-htmlacademy.svg" width="93px" alt="html Academy">
       </a>
-      <p class="macer-description">
-        Сделано в .html academy © 2021
+      <p class="maker-description">
+        Сделано в <a class="maker-description-link" href="https://htmlacademy.ru/">.html academy</a> © 2021
       </p>
      </div> 
     </footer>
